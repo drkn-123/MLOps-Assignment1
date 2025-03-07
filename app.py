@@ -5,8 +5,10 @@ app = Flask(__name__)
 # Addition
 @app.route('/add', methods=['GET'])
 def add():
+    # Get the values of num1 and num2 from the URL
     num1 = float(request.args.get('num1', 0))
     num2 = float(request.args.get('num2', 0))
+    # Return the sum of num1 and num2 in JSON format
     return jsonify({"result": num1 + num2})
 
 # Subtraction
